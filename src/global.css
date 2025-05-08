@@ -1,0 +1,50 @@
+/* global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: #000;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  } */
+  
+  /* button:hover {
+    background-color: #0056b3;
+  } */
+  
+  /* .auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+  } */
+  
+
+  /* @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+    main {
+      padding: 10px;
+    }
+  } */
+  
