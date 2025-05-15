@@ -36,20 +36,29 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    if (location.pathname === "/") {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-        setMenuOpen(false);
-      }
-    } else {
-      navigate("/");
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) section.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+  if (location.pathname === "/") {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // Calculate navbar height (adjust selector as needed)
+      const navbar = document.querySelector('nav');
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      
+      // Get exact position accounting for any transforms
+      const sectionRect = section.getBoundingClientRect();
+      const sectionTop = sectionRect.top + window.pageYOffset - navbarHeight;
+      
+      // Use window.scrollTo for precise control
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth"
+      });
+      
+      setMenuOpen(false);
     }
-  };
+  } else {
+    navigate("/", { state: { scrollTo: sectionId } });
+  }
+};
 
   // Mobile menu items with icons
   const mobileMenuItems = [
@@ -66,7 +75,10 @@ const Navbar = () => {
     { 
       label: "About", 
       icon: <Info size={20} className="flex-shrink-0" />,
-      to:"/about"
+      action: () => {
+      navigate("/about");
+      window.scrollTo(0, 0); // Reset scroll to top
+      }    
     },
     { 
       label: "Contact", 

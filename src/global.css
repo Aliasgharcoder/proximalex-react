@@ -14,7 +14,15 @@
     color: #000;
     font-family: 'Inter', sans-serif;
   }
-  
+  /* Ensure hero section accounts for navbar */
+#hero-section {
+  scroll-margin-top: 80px; /* Match your navbar height */
+}
+
+/* If using transform/translate in animations */
+.hero-content {
+  transform: translateZ(0); /* Creates new stacking context */
+}
   /* button {
     background-color: #007bff;
     color: white;
