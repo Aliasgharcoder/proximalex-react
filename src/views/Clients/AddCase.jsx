@@ -408,7 +408,7 @@ const AddCase = () => {
             <option value="">Let system auto-match</option>
             {lawyers.map((lawyer) => (
               <option key={lawyer.id} value={lawyer.id}>
-                {lawyer.username}({lawyer.specialization})
+                {lawyer.username}({lawyer.specialization})({lawyer.location})
               </option>
             ))}
           </select>
