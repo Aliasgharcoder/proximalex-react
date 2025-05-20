@@ -163,6 +163,19 @@ const Login = () => {
             </motion.button>
           </div>
         </div>
+        <div className="mt-2 text-center">
+                <p className="text-sm text-gray-400">
+                  Admin access?{" "}
+                  <a
+                    href="http://localhost:8000/admin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-orange-500 hover:text-orange-400"
+                  >
+                    Go to Admin Panel
+                  </a>
+                </p>
+        </div>
 
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-400">
